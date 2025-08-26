@@ -7,8 +7,8 @@ from brain_games.games.brain_game import brain_game
 
 def brain_calc_game():
     game_config = {
-        "rules": 'What is the result of the expression?',
-        "generate_question": lambda: f'{randint(10, 100)} {get_operation()} {randint(0, 10)}',
+        "rule": 'What is the result of the expression?',
+        "generate_question": generate_question,
         "get_correct_answer": lambda question: eval(question),
         "get_user_answer": lambda: prompt.integer("Your answer: "),
     }
@@ -16,6 +16,17 @@ def brain_calc_game():
     brain_game(**game_config)
 
 
+def generate_question():
+    NUMBER1_MIN = 10
+    NUMBER1_MAX = 100
+    NUMBER2_MIN = 0
+    NUMBER2_MAX = 10
+
+    num1 = randint(NUMBER1_MIN, NUMBER1_MAX)
+    num2 = randint(NUMBER2_MIN, NUMBER2_MAX)
+    return f'{num1} {get_operation()} {num2}'
+
+
 def get_operation():
-    operations = ["+", "-", "*"]
-    return choice(operations)
+    OPERATIONS = ["+", "-", "*"]
+    return choice(OPERATIONS)

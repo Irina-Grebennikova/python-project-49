@@ -7,7 +7,7 @@ from brain_games.games.brain_game import brain_game
 
 def brain_progression_game():
     game_config = {
-        'rules': 'What number is missing in the progression?',
+        'rule': 'What number is missing in the progression?',
         'generate_question': generate_question,
         'get_correct_answer': get_correct_answer,
         'get_user_answer': lambda: prompt.integer('Your answer: '),
@@ -23,14 +23,18 @@ def generate_question():
 
 
 def get_progression():
-    progression_length = 10
+    PROGRESSION_LENGTH = 10
+    MIN_FIRST_NUMBER = 0
+    MAX_FIRST_NUMBER = 10
+    MIN_STEP = 1
+    MAX_STEP = 50
 
-    start = randint(0, 10)
-    step = randint(1, 50)
-    missing_number_index = randint(0, progression_length - 1)
+    start = randint(MIN_FIRST_NUMBER, MAX_FIRST_NUMBER)
+    step = randint(MIN_STEP, MAX_STEP)
+    missing_number_index = randint(0, PROGRESSION_LENGTH - 1)
 
     progression = []
-    for index in range(progression_length):
+    for index in range(PROGRESSION_LENGTH):
         current_element = start + index * step
         if index == missing_number_index:
             progression.append(None)

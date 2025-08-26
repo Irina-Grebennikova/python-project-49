@@ -7,13 +7,23 @@ from brain_games.games.brain_game import brain_game
 
 def brain_even_game():
     game_config = {
-        "rules": 'Answer "yes" if the number is even, otherwise answer "no".',
-        "generate_question": lambda: randint(1, 100),
-        "get_correct_answer": lambda question: "yes" if is_even(question) else "no",
+        "rule": 'Answer "yes" if the number is even, otherwise answer "no".',
+        "generate_question": generate_question,
+        "get_correct_answer": get_correct_answer,
         "get_user_answer": lambda: prompt.string("Your answer: "),
     }
 
     brain_game(**game_config)
+
+
+def generate_question():
+    MIN_NUMBER = 1
+    MAX_NUMBER = 100
+    return randint(MIN_NUMBER, MAX_NUMBER)
+
+
+def get_correct_answer(question):
+    return "yes" if is_even(question) else "no"
 
 
 def is_even(number):

@@ -8,13 +8,23 @@ from brain_games.games.brain_game import brain_game
 
 def brain_prime_game():
     game_config = {
-        "rules": 'Answer "yes" if given number is prime. Otherwise answer "no".',
-        "generate_question": lambda: randint(0, 1000),
-        "get_correct_answer": lambda question: "yes" if is_prime(question) else "no",
+        "rule": 'Answer "yes" if given number is prime. Otherwise answer "no".',
+        "generate_question": generate_question,
+        "get_correct_answer": get_correct_answer,
         "get_user_answer": lambda: prompt.string("Your answer: "),
     }
 
     brain_game(**game_config)
+
+
+def generate_question():
+    MIN_NUMBER = 0
+    MAX_NUMBER = 1000
+    return randint(MIN_NUMBER, MAX_NUMBER)
+
+
+def get_correct_answer(question):
+    return "yes" if is_prime(question) else "no"
 
 
 def is_prime(number):

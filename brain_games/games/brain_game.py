@@ -1,11 +1,13 @@
 from brain_games.cli import welcome_user
 
 
-def brain_game(rules, generate_question, get_correct_answer, get_user_answer):
-    username = welcome_user()
-    print(rules)
+def brain_game(rule, generate_question, get_correct_answer, get_user_answer):
+    ROUND_COUNT = 3
 
-    for _ in range(3):
+    username = welcome_user()
+    print(rule)
+
+    for _ in range(ROUND_COUNT):
         question = generate_question()
         print(f"Question: {question}")
 
@@ -16,9 +18,12 @@ def brain_game(rules, generate_question, get_correct_answer, get_user_answer):
         if check_result:
             print("Correct!")
         else:
-            print(
-                f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.\nLet's try again, {username}!"
+            fail_message = (
+                f"'{user_answer}' is wrong answer ;(. "
+                f"Correct answer was '{correct_answer}'.\n"
+                f"Let's try again, {username}!"
             )
+            print(fail_message)
             return
 
     print(f"Congratulations, {username}!")
