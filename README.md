@@ -54,7 +54,7 @@ brain-even
 
 ### demo
 
-<script src="https://asciinema.org/a/R32WWsrjkVVlZlXn0voIrzNv8.js" id="asciicast-R32WWsrjkVVlZlXn0voIrzNv8" async="true"></script>
+[![asciicast](https://asciinema.org/a/R32WWsrjkVVlZlXn0voIrzNv8.svg)](https://asciinema.org/a/R32WWsrjkVVlZlXn0voIrzNv8)
 
 ## brain-calc
 
