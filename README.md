@@ -25,3 +25,7 @@
 
 ### **brain-gcd** demo
 [![asciicast](https://asciinema.org/a/jlQMicbikMosAJ795mqbGjEID.svg)](https://asciinema.org/a/jlQMicbikMosAJ795mqbGjEID)
+
+
+### **brain-progression** demo
+[![asciicast](https://asciinema.org/a/iO3qUIHduJCMGynKzBErRJw2q.svg)](https://asciinema.org/a/iO3qUIHduJCMGynKzBErRJw2q)
