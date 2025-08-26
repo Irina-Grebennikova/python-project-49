@@ -21,3 +21,7 @@
 
 ### **brain-calc** demo
 [![asciicast](https://asciinema.org/a/MXZTKmOJShDVcTXRouLidGj34.svg)](https://asciinema.org/a/MXZTKmOJShDVcTXRouLidGj34)
+
+
+### **brain-gcd** demo
+[![asciicast](https://asciinema.org/a/jlQMicbikMosAJ795mqbGjEID.svg)](https://asciinema.org/a/jlQMicbikMosAJ795mqbGjEID)
